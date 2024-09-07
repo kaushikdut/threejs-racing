@@ -101,14 +101,6 @@ export default function Home() {
 
   return (
     <div className="h-screen w-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-purple-500 overflow-hidden">
-      {start && !gameOver && (
-        <>
-          <div className="text-white text-3xl font-bold">Score: {score}</div>
-          <div className="text-white text-3xl font-bold">
-            HighScore: {highScore}
-          </div>
-        </>
-      )}
       <Canvas
         camera={{ position: [0, 10, 10], fov: 50 }}
         onPointerDown={(e) => (e.target as HTMLElement).requestPointerLock()}
@@ -144,6 +136,16 @@ export default function Home() {
           <Button size={"lg"} onClick={() => setStart(true)}>
             Start
           </Button>
+        </div>
+      )}
+      {start && !gameOver && (
+        <div className="absolute inset-0 flex flex-col gap-y-2 p-3 w-fit">
+          <div className="text-white text-3xl font-bold w-fit">
+            Score: {score}
+          </div>
+          <div className="text-white text-3xl font-bold w-fit">
+            HighScore: {highScore}
+          </div>
         </div>
       )}
 
