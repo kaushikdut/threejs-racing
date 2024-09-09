@@ -168,7 +168,7 @@ export default function Home() {
           <div className="bg-neutral-300 flex p-4 rounded-xl">
             <div className="w-[460px] flex items-center justify-center gap-x-4">
               <p className="text-lg text-gray-600 whitespace-nowrap">
-                Camera Zoom
+                Camera Zoom out
               </p>
               <Slider
                 defaultValue={[camZoom]}
